@@ -1,0 +1,17 @@
+{
+    "login": "Login",
+    "uniAlpesAccount": "Use your UniAlpes Account",
+    "email": "Enter email",
+    "emailDisclaimer": "We'll never share your email with anyone else.",
+    "emailError": "Your email should follow an established format",
+    "forgotEmail": "Forgot your email?",
+    "createAccount": "Create account",
+    "next": "Next",
+    "password": "Password",
+    "passwordRequirements": "Your password should have numbers and letters and should be at least 6 characters long.",
+    "carMaker": "Car Maker",
+    "carModel": "Car Model",
+    "carYear": "Car Year",
+    "availableOnline": "Available Online",
+    "price": "Price"
+}

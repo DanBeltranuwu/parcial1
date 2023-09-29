@@ -1,11 +1,14 @@
 import { Row, Col } from "react-bootstrap";
+import { FormattedMessage } from "react-intl";
 import { useParams } from "react-router-dom";
 const { useEffect, useState } = require("react");
 
 function rowDetail(title, value) {
   return (
     <Row>
-      <h4>{title}</h4>
+      <h4>
+        <FormattedMessage id={title} />
+      </h4>
       <h4>{value}</h4>
     </Row>
   );
@@ -38,11 +41,11 @@ export default function Detail() {
         <Col>
           <h1>{part.partName}</h1>
           <hr />
-          {rowDetail("Car Maker", part.carMaker)}
-          {rowDetail("Car Model", part.carModel)}
-          {rowDetail("Car Year", part.carYear)}
-          {rowDetail("Available Online", part.available)}
-          {rowDetail("Price", part.price)}
+          {rowDetail("carMaker", part.carMaker)}
+          {rowDetail("carModel", part.carModel)}
+          {rowDetail("carYear", part.carYear)}
+          {rowDetail("availableOnline", part.available)}
+          {rowDetail("price", part.price)}
           <h4>Description</h4>
           <h4>{part.description}</h4>
         </Col>

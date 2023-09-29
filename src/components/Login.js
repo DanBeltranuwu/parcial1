@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 const { useState } = require("react");
 const { Form, FormGroup, FormControl, Button } = require("react-bootstrap");
@@ -24,7 +25,7 @@ function Login() {
       formValues.email.length === 0 ||
       formValues.email.match(validRegex)
     ) {
-        handleEmailError(false);
+      handleEmailError(false);
     }
   }
   function validatePass() {
@@ -58,7 +59,7 @@ function Login() {
   };
 
   const clickNext = () => {
-    if (emailPage && !errorValues.email) {
+    if (emailPage && !errorValues.email && formValues.email.length > 0) {
       setEmailPage(false);
     }
   };
@@ -66,43 +67,53 @@ function Login() {
     if (emailPage) {
       return (
         <Button type="submit" onClick={clickNext}>
-          Siguiente
+          <FormattedMessage id="next" />
         </Button>
       );
     }
 
     return (
       <Link to="/inventory">
-        <Button type="submit">Siguiente</Button>
+        <Button type="submit">
+          <FormattedMessage id="next" />
+        </Button>
       </Link>
     );
   }
-
 
   function getContent() {
     if (emailPage) {
       return (
         <Form>
-          <h2>Acceder</h2>
-          <h3>Usa tu Cuenta de UniAlpes</h3>
+          <h2>
+            <FormattedMessage id="login" />
+          </h2>
+          <h3>
+            <FormattedMessage id="uniAlpesAccount" />
+          </h3>
           <FormGroup>
             <FormControl
               type="text"
               id="username"
-              placeholder="Enter email"
               value={formValues.email}
               onChange={handleEmailChange}
               isInvalid={errorValues.email}
             />
             <Form.Text className="text-muted">
-              {errorValues.email
-                ? "Your email should follow an established format"
-                : "We'll never share your email with anyone else."}
+              {errorValues.email ? (
+                <FormattedMessage id="emailError" />
+              ) : (
+                <FormattedMessage id="emailDisclaimer" />
+              )}
             </Form.Text>
           </FormGroup>
-          <a href="https://www.google.com">¿Olvidaste tu correo electrónico?</a>
+          <a href="https://www.google.com">
+            <FormattedMessage id="forgotEmail" />
+          </a>
           <div>
-            <a href="https://www.google.com">Crear cuenta</a>
+            <a href="https://www.google.com">
+              <FormattedMessage id="createAccount" />
+            </a>
             {getNextButton()}
           </div>
         </Form>
@@ -115,18 +126,18 @@ function Login() {
           <FormControl
             type="password"
             id="password"
-            placeholder="Password"
             value={formValues.password}
             onChange={handlePasswordChange}
             isInvalid={errorValues.password}
           />
           <Form.Text className="text-muted">
-            Your password should be have numbers and letters and should be at
-            least 6 char long.
+            <FormattedMessage id="passwordRequirements" />
           </Form.Text>
         </FormGroup>
         <div className="d-flex justify-content-center">
-          <a href="https://www.google.com">Crear cuenta</a>
+          <a href="https://www.google.com">
+            <FormattedMessage id="createAccount" />
+          </a>
           {getNextButton()}
         </div>
       </Form>

@@ -1,0 +1,17 @@
+{
+    "login": "Acceder",
+    "uniAlpesAccount": "Usa tu Cuenta de UniAlpes",
+    "email": "Ingresa tu correo electrónico",
+    "emailDisclaimer": "Nunca compartiremos tu correo electrónico con nadie más.",
+    "emailError": "Tu correo electrónico debe seguir el formato establecido",
+    "forgotEmail": "¿Olvidaste tu correo electrónico?",
+    "createAccount": "Crear cuenta",
+    "next": "Siguiente",
+    "password": "Contraseña",
+    "passwordRequirements": "Tu contraseña debe tener números y letras y debe tener al menos 6 caracteres de longitud.",
+    "carMaker": "Fabricante de automóviles",
+    "carModel": "Modelo de automóvil",
+    "carYear": "Año del automóvil",
+    "availableOnline": "Disponible en línea",
+    "price": "Precio"
+}
